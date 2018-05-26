@@ -1,0 +1,3 @@
+useDynLib(BMLCimpute, .registration=TRUE)
+exportPattern(convData, compData, multilevelLCMI)
+importFrom(Rcpp, evalCpp)
