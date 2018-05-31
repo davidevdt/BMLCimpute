@@ -11,7 +11,7 @@ Version: 0.1
 
 Date: 2018-05-24 
 
-Author: Davide Vidotto
+Author: Davide Vidotto. (Promoters : Jeroen K. Vermunt and Katrijn van Deun)
 
 Maintainer: Davide Vidotto <d.vidotto@uvt.nl> 
 
