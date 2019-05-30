@@ -270,7 +270,7 @@
 	// Allocate level-2 and level-1 units to latent classes by using the posterior memberships just calculated 
 	void allocation(int L, int K, int J, IntegerVector nj, int T, List pclasslev1, NumericMatrix jointlev2, NumericVector nlatw, NumericMatrix nlatpk, List datJ, List R, List nresp, IntegerVector ncat, List z, IntegerVector w, int b, double prilev2, double prilev1, double priresp, List pat, List npattern, List nlat2, double prioresp2, bool doVar2, int T2, IntegerVector ncat2, IntegerMatrix R2, IntegerMatrix Y2, IntegerVector sel, NumericMatrix condp1, bool saveAllocations, IntegerVector npatj, IntegerVector zj, IntegerVector patj, NumericVector probsb, List prc10_, List nresp_, NumericMatrix prc10, NumericMatrix nlt2, NumericMatrix nrsp, IntegerMatrix dat, IntegerMatrix Rj, int zz, int j, int l, int i, int ii, int k, int t, int s, int t2, int s2){
 		
-		
+		// Initialize counts to prior hyperparameters
 		
 		saveAllocations = (is_true(any(sel==(b))) && b>0);		
 
@@ -302,7 +302,10 @@
 				}
 			}			
 		}		
-				
+		
+		
+		// Sampling step
+		
 		for( j=0; j<J; j++ ){
 			dat = as<IntegerMatrix>(datJ(j));
 			Rj = as<IntegerMatrix>(R(j));
