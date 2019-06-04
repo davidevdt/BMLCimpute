@@ -1,24 +1,33 @@
-# BMLCimpute
+# BMLCimpute: Bayesian Multilevel Latent Class Models for the Multiple Imputation of Nested Categorical Data   
 An R package for the multiple imputation of single-level and nested categorical data by means of Bayesian Multilevel Latent Class models. 
 
-Package: BMLCimpute
+## Author
+Davide Vidotto <d.vidotto@uvt.nl> 
 
-Type: Package
+## Description
+```BMLCimpute``` allows researchers and users of categorical datasets with missing data to perform Multiple Imputation via Bayesian latent class models. 
+    Data can be either single- or multi-level. Model estimation and imputations are implemented via a Gibbs sampler run with the Rcpp package interface. 
+    The function ```multilevelLCMI``` performs the imputations. Prior to the imputation step, data should be processed with the function ```convData```; the 
+    resulting list is then passed as input to the ```multilevelLCMI```. Complete datasets are obtained via the ```compData``` function. Check package
+	documentation in ```inst/doc``` for further information. 
 
-Title: BMLCimpute: Bayesian Multilevel Latent Class Models for the Multiple Imputation of Nested Categorical Data
+## Functions
 
-Version: 0.1
+* ```multilevelLCMI``` for the imputations and model estimation (internally calls Rcpp code) 
+* ```convData``` for data preparation (preprocessing) 
+* ```compData``` for dataset completion
 
-Date: 2018-05-24 
+## Install
+devtools::install_github("davidevdt/BMLCimpute")
 
-Author: Davide Vidotto. (Promoters : Jeroen K. Vermunt and Katrijn van Deun)
+## Version
+0.0.1
 
-Maintainer: Davide Vidotto <d.vidotto@uvt.nl> 
+## Depends 
+R (>= 3.3.3)
 
-Description: A package for the multiple imputation of single-level and nested categorical data by means of Bayesian Multilevel Latent Class models.
+## License 
+GPL-2
 
-License: GPL (>= 2)
 
-Imports: Rcpp (>= 0.12.5)
 
-LinkingTo: Rcpp

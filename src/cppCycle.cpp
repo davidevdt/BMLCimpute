@@ -35,7 +35,7 @@
 	// Uniform 1
 	double ranf(void){
 		double r;
-		r = ((double) (rand() + 1.0)) / (RAND_MAX + 2);
+		r = ((double) ((unif_rand() * RAND_MAX)   + 1.0)) / (RAND_MAX + 2);
 		return r;
 	}
 	
@@ -43,7 +43,7 @@
 	double rand_(void){
 		double r = 0;
 		while( r == 0 || r == 1 ){
-			r = ((double) rand()) / RAND_MAX;
+			r = ((double) (unif_rand() * RAND_MAX) ) / RAND_MAX;
 		}
 		return r;
 	}
@@ -734,7 +734,14 @@
 				}else{
 					Rcout << "Burn-in, iteration " << b << ", loglik = " << loglik << "^(1/" << scale << ")" << std::endl;
 				}
-			}	
+			}
+
+			
+			
+			if( b % 10 == 0 ){				
+				Rcpp::checkUserInterrupt();
+			}    
+			
 		}
 		
 		// Posterior computation 
@@ -781,7 +788,12 @@
 				}else{
 					Rcout << "Posterior computation, iteration " << b << ", loglik = " << loglik << "^(1/" << scale << ")" <<  std::endl;
 				}			
-			}		
+			}
+
+			if( b % 10 == 0 ){				
+				Rcpp::checkUserInterrupt();
+			}    
+			
 		}
 		
 		// Compute Posterior Means 
