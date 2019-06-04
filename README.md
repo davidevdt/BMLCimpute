@@ -1,4 +1,5 @@
-# BMLCimpute: Bayesian Multilevel Latent Class Models for the Multiple Imputation of Nested Categorical Data   
+# BMLCimpute
+## Bayesian Multilevel Latent Class Models for the Multiple Imputation of Nested Categorical Data   
 An R package for the multiple imputation of single-level and nested categorical data by means of Bayesian Multilevel Latent Class models. 
 
 ## Author
